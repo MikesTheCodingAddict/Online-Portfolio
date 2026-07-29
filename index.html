@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="This is my portfolio showcasing some of my works and gives an overview of who I am.">
+        <meta name="keywords" content="Michael, Portfolio, Projects, Links, Contact Me, About Me">
+        <meta rel="canonical" href="https://www.michaeljcortez.com">
+        <meta name="author" content="Michael Cortez">
+        
+        <link rel="stylesheet" href="./stylesheet/style.css" type="text/css">
+
+        <title>Michael's Portfolio</title>
+    </head>
+
+    <body>
+        <nav class="top_nav_bar">
+            <button class="hamburger" id="hamburger" type="button" onclick="hamburger()" aria-expanded="false" aria-controls="hb-links-wrapper">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+            <div>
+                <ul class="hb-links-wrapper" id="hb-links-wrapper">
+                    <li><a href="index.html">Main</a></li>
+                    <li><a href="about_me.html">About Me</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="#">UNDEFINED</a></li>
+                    <li><a href="contact_me.html">Contact Me</a></li>
+                    <li><a href="links.html">Links</a></li>
+                </ul>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Main</a></li>
+                <li><a href="about_me.html">About Me</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="#">UNDEFINED</a></li>
+                <li><a href="contact_me.html">Contact Me</a></li>
+                <li><a href="links.html">Links</a></li>
+            </ul>
+        </nav>
+        <header>
+            <h1><br>Welcome to Michael's Website!</h1>
+        </header>
+        
+        <main>
+            <section class="section-wrapper webpage-info-section">
+                <div class="questionAndParagraph-header qpHeaderWrapper left-sided-wrapper">
+                    <h2>Landing: Successful</h2>
+                </div>
+                <div class="paragraph-box right-sided-wrapper">
+                    <p>
+                        I give you a warm welcome to my little nook on the Internet. This website gives you an overview of who
+                        I am in a professional, clean manner.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section-wrapper">
+                <div class="questionAndParagraph-header qpHeaderWrapper">
+                    <h2>Why did I build this website?</h2>
+                </div>
+                <div class="paragraph-box">
+                    <p>
+                        I wanted to build this website to have a place to introduce myself, show off some of my works, and share
+                        ways for people to contact me. I also have always wanted my own website, and since I wanted to build a
+                        portfolio in conjunction to what I said, I went ahead and built this from scratch using my own raw code.
+                        I believe using "drag-and-drop" website builders such as Wix and Google Sites hardly introduce anything
+                        meaningful to one's own curriculum. So, I went and learned how to code websites from scratch to make
+                        myself far more indispensable.
+                    </p>
+                </div>
+
+                <div class="questionAndParagraph-header qpHeaderWrapper">
+                    <h2>Please, take a gander around...</h2>
+                </div>
+                <div class="paragraph-box">
+                    <p>
+                        Feel free to explore my website here. I have awesome content to share here. I've got sections that
+                        introduce myself, showcase my awards and projects, links to my other "social media" profiles, and
+                        ways to contact me.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <span id="footerDate"></span>
+        </footer>
+
+        <!-- --JavaScript scripts for this webpage.-- -->
+        <!-- Updates the footer's last updated date. -->
+        <script src="./scripts/footer/footerDateUpdate.js" defer></script>
+        <!-- Enables the hamburger menu functionality.-->
+        <script src="./scripts/hamburger/hamburger.js" defer></script>
+    </body>
+</html>

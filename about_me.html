@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="In this part of my portfolio, you learn more about me.">
+        <meta name="keywords" content="Michael, Portfolio, Projects, Links, Contact Me, About Me">
+        <meta rel="canonical" href="https://www.michaeljcortez.com/about_me.html">
+        <meta name="author" content="Michael Cortez">
+        
+        <link rel="stylesheet" href="./stylesheet/style.css" type="text/css">
+
+        <title>Michael's Portfolio - About Me</title>
+    </head>
+
+    <body>
+        <nav class="top_nav_bar">
+            <button class="hamburger" id="hamburger" type="button" onclick="hamburger()" aria-expanded="false" aria-controls="hb-links-wrapper">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+            <div>
+                <ul class="hb-links-wrapper" id="hb-links-wrapper">
+                    <li><a href="index.html">Main</a></li>
+                    <li><a href="about_me.html">About Me</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="#">UNDEFINED</a></li>
+                    <li><a href="contact_me.html">Contact Me</a></li>
+                    <li><a href="links.html">Links</a></li>
+                </ul>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Main</a></li>
+                <li><a href="about_me.html" class="active">About Me</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="#">UNDEFINED</a></li>
+                <li><a href="contact_me.html">Contact Me</a></li>
+                <li><a href="links.html">Links</a></li>
+            </ul>
+        </nav>
+        <header>
+            <h1><br>Learn About Me!</h1>
+        </header>
+
+        <main>
+            <section class="section-wrapper webpage-info-section">
+                <div class="qpHeaderWrapper questionAndParagraph-header left-sided-wrapper">
+                    <h2>About Me</h2>
+                </div>
+                <div class="paragraph-box right-sided-wrapper">
+                    <p>
+                        You can read about who I am and learn a little about my personal life.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section-wrapper">
+                <div class="imageWrapper">
+                    <!-- This is where my professional looking image of myself will be. -->
+                    <img src="./images/professionalPhoto/20241004_115018.jpg" class="proSelfie">
+                </div>
+                <div class="paragraph-box">
+                    <p>
+                        Hello! My name is Michael Cortez. I am a college graduate with an Associate's Degree in Computer
+                        Programming. I am always willing to learn something new and am a great team player. I work hard and
+                        always strive to be the best at what I do. 
+                    </p>
+                </div>
+                <div class="imageWrapper">
+                    <!-- This'll be where a picture of one of my hobbies and interests will be displayed. -->
+                    <img src="./images/hobbiesAndInterests/81Sv5QPEftL._AC_UL320_.jpg" class="hobbiesInterestsPicOne">
+                </div>
+                <div class="paragraph-box">
+                    <p>
+                        I have quite a few hobbies and interests. I enjoy playing board games such as Scrabble, Monopoly, and
+                        Battleship if I'm feeling a little vengeful. I play video games such as Minecraft, Grand Theft Auto,
+                        some of the Five Nights At Freddy's games, and most of the Sonic the Hedgehog games as well. Aside
+                        from gaming, I also partake in watching classic comedy films, listen to tons of classical music as
+                        well as rock and roll, and read autobiographies as well as mystery novels.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <span id="footerDate"></span>
+        </footer>
+
+        <!-- --JavaScript scripts for this webpage.-- -->
+        <!-- Updates the footer's last updated date. -->
+        <script src="./scripts/footer/footerDateUpdate.js" defer></script>
+        <!-- Enables the hamburger menu functionality.-->
+        <script src="./scripts/hamburger/hamburger.js" defer></script>
+    </body>
+</html>

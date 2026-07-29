@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="You can submit a form to reach me for any professional inquiries.">
+        <meta name="keywords" content="Michael, Portfolio, Projects, Links, Contact Me, About Me">
+        <meta rel="canonical" href="https://www.michaeljcortez.com/contact_form.html">
+        <meta name="author" content="Michael Cortez">
+        
+        <link rel="stylesheet" href="./stylesheet/style.css" type="text/css">
+
+        <title>Michael's Portfolio - Contact Form</title>
+    </head>
+
+    <body>
+        <nav class="top_nav_bar">
+            <button class="hamburger" id="hamburger" type="button" onclick="hamburger()" aria-expanded="false" aria-controls="hb-links-wrapper">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+            <div>
+                <ul class="hb-links-wrapper" id="hb-links-wrapper">
+                    <li><a href="index.html">Main</a></li>
+                    <li><a href="about_me.html">About Me</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="#">UNDEFINED</a></li>
+                    <li><a href="contact_me.html">Contact Me</a></li>
+                    <li><a href="links.html">Links</a></li>
+                </ul>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Main</a></li>
+                <li><a href="about_me.html">About Me</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="#">UNDEFINED</a></li>
+                <li><a href="contact_me.html">Contact Me</a></li>
+                <li><a href="links.html">Links</a></li>
+            </ul>
+        </nav>
+        <header>
+            <h1><br>Contact Form</h1>
+        </header>
+
+        <main>
+            <section class="section-wrapper">
+                <div class="paragraph-box">
+                    <p>
+                        If you would like to reach me for any professional inquiries, please fill out the form below.
+                        I will respond to your message as soon as I can. Please ensure that you provide accurate contact
+                        information so that I can reach back to you, and you alone.
+                    </p>
+                </div>
+                <form method="POST" action="#" class="contactForm">
+                    <label>Name <span>*</span></label>
+                    <input type="text" name="Name" placeholder="John Smith" id="formName" required>
+                    <label>Email <span>*</span></label>
+                    <input type="email" name="Email" placeholder="contactme@email.com" id="formEmail" required>
+                    <label>Phone</label>
+                    <input type="tel" name="Phone" placeholder="+1 (000) 000-0000" id="formPhone">
+                    <label>Website</label>
+                    <input type="url" name="Website" placeholder="https://www.website.com" id="formURL">
+                    <label>Message <span>*</span></label>
+                    <textarea type="text" name="Message" placeholder="Type a message here..." id="formMessage" required></textarea>
+                    <br><button type="submit" id="submitFormButton">Send</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <span id="footerDate"></span>
+        </footer>
+
+        <!-- --JavaScript scripts for this webpage.-- -->
+        <!-- Updates the footer's last updated date. -->
+        <script src="./scripts/footer/footerDateUpdate.js" defer></script>
+        <!-- Enables the hamburger menu functionality.-->
+        <script src="./scripts/hamburger/hamburger.js" defer></script>
+    </body>
+</html>

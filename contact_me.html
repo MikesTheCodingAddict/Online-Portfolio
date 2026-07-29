@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="You can find a few ways to reach me in this part of my portfolio.">
+        <meta name="keywords" content="Michael, Portfolio, Projects, Links, Contact Me, About Me">
+        <meta rel="canonical" href="https://www.michaeljcortez.com/contact_me.html">
+        <meta name="author" content="Michael Cortez">
+        
+        <link rel="stylesheet" href="./stylesheet/style.css" type="text/css">
+
+        <title>Michael's Portfolio - Contact Me</title>
+    </head>
+
+    <body>
+        <nav class="top_nav_bar">
+            <button class="hamburger" id="hamburger" type="button" onclick="hamburger()" aria-expanded="false" aria-controls="hb-links-wrapper">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+            <div>
+                <ul class="hb-links-wrapper" id="hb-links-wrapper">
+                    <li><a href="index.html">Main</a></li>
+                    <li><a href="about_me.html">About Me</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="#">UNDEFINED</a></li>
+                    <li><a href="contact_me.html">Contact Me</a></li>
+                    <li><a href="links.html">Links</a></li>
+                </ul>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Main</a></li>
+                <li><a href="about_me.html">About Me</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="#">UNDEFINED</a></li>
+                <li><a href="contact_me.html" class="active">Contact Me</a></li>
+                <li><a href="links.html">Links</a></li>
+            </ul>
+        </nav>
+        <header>
+            <h1><br>Pigeon Me!</h1>
+        </header>
+
+        <main>
+            <section class="section-wrapper webpage-info-section">
+                <div class="qpHeaderWrapper questionAndParagraph-header left-sided-wrapper">
+                    <h2>Contact Me</h2>
+                </div>
+                <div class="paragraph-box right-sided-wrapper">
+                    <p>
+                        I am all over the place on this massive Web... Not really. But you can reach me anywhere listed below.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section-wrapper">
+                <div class="imageWrapper">
+                    <!-- This will be a picture of some mail. -->
+                    <img src="./images/mail/images.jpg" class="contactFormMailImage">
+                </div>
+                <div class="qpHeaderWrapper questionAndParagraph-header">
+                    <h2>Contact Form</h2>
+                </div>
+                <div class="paragraph-box">
+                    <p>
+                        You can fill out the very offical contact form. Entries are sent to my email, which I check twice a day at the
+                        very least. Feel free to fill out the contact form linked down below.<br><br>Please do not spam my inbox with any spam,
+                        or any other rubbish. The contact form is strictly for professional communication only. Do not attach any
+                        personal information to it nor send any inquiries about my personal affairs. Again, this is for professional
+                        communication only. Keep any attribute of your personal life compartmentalized when networking with me through
+                        this medium.
+                        <br><br>Contact Form: <a href="./contact_form.html">Fill It Out Here</a>
+                    </p>
+                </div>
+                <div class="imageWrapper">
+                    <!-- This will be a picture of a rotary dial telephone. -->
+                    <img src="./images/rotaryTelephone/Western-Electric-Model-500-Rotary-Dial-Telephone-Made-In-The-1950S-It-Remained-The-Bell-SystemS-Standard-Model-Until-1984-It-Was.jpg" class="rotaryTelephoneImage">
+                </div>
+                <div class="qpHeaderWrapper questionAndParagraph-header">
+                    <h2>Google Voice</h2>
+                </div>
+                <div class="paragraph-box">
+                    <p>
+                        You can text me or even call me. BUT, keep in mind that I most likely will not answer if you call
+                        my Google Voice phone number. So you will need to leave me a voicemail identifying yourself, why
+                        you're calling me, and your callback phone number. If I even smell a little bit of spam coming
+                        my way, I will change my Google Voice phone number and update the number here when appropriate.
+                        <br><br>Otherwise, it is usually better if you text me. I will, of course, reach out back to you as
+                        soon as I have the chance. Also, note that if I feel even a little uncomfortable and think that you're
+                        a scammer, I will ignore your next text message and block your phone number.
+                        <br><br>Remember, professional communication is key!
+                        <br><br>Call: <a href="#" id="phoneCallLink"></a>
+                        <br><br>Text: <a href="#" id="phoneTextLink"></a>
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <span id="footerDate"></span>
+        </footer>
+
+        <!-- --JavaScript scripts for this webpage.-- -->
+        <!-- Updates the footer's last updated date. -->
+        <script src="./scripts/footer/footerDateUpdate.js" defer></script>
+        <!-- Enables the hamburger menu functionality.-->
+        <script src="./scripts/hamburger/hamburger.js" defer></script>
+        <!-- Allows the end user to call and or text the Google Voice phone number. -->
+        <script src="./scripts/phone/phoneCall.js" defer></script>
+        <script src="./scripts/phone/phoneText.js" defer></script>
+    </body>
+</html>
