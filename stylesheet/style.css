@@ -206,6 +206,7 @@ footer {
     border-color: black;
     border-radius: 25px 25px 25px 25px;
     padding: var(--boxPadding);
+    text-align: center;
 }
 
 /* ---Index attribute properties.--- */
