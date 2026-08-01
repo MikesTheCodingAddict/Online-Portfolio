@@ -8,12 +8,11 @@
    experience of doing so. */
 
 try {
-   document.getElementById("footerDate").textContent = "Created and run by Michael Cortez. Page last updated on " + document.lastModified + " EDT";
+   const footerDate = document.getElementById("footerDate");
+   const lastModifiedDate = new Date(document.lastModified);
+
+   footerDate.textContent = `Created and run by Michael Cortez. Page last updated on ${lastModifiedDate}.`;
    console.log("Footer content loaded successfully.");
-} catch (exception) {
-   if (exception instanceof TypeError) {
-      console.log("Footer content did not load properly.");
-   } else {
-      console.log("An unknown error occured trying to load the footer content.");
-   }
+} catch (execption) {
+   console.error("An unknown error occured trying to load the footer content: ", exception);
 }

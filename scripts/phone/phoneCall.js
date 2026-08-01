@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
-	const area = 774;
-	const middle = 205;
-	const line = 1787;
+	const area = "774";
+	const middle = "205";
+	const line = "1787";
 	const full = area + middle + line;
 	const link = document.getElementById("phoneCallLink");
 
-	link.href = `tel:{full}`;
+	link.href = `tel:${full}`;
 	link.textContent = "Call Me!";
 });
