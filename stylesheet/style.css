@@ -49,6 +49,11 @@
 /* While these are the base styles, they are firstly written for mobile screens, making this a mobile-first approach. */
 /* Adds a fading transition for navigating from one webpage to another like one found in a PowerPoint presentation. */
 @view-transition { navigation: auto; }
+/* Global reset. */
+/* * {
+    margin: 0;
+    padding: 0;
+} */
 
 /* ---Reusable elements.--- */
 body {
@@ -60,6 +65,19 @@ body {
 button {
     display: block; /* Allows for better customization; inline elements are not easily customizable. */
     position: relative; /* "Unlocks" the button from its position. */
+}
+/* Top banner. */
+.banner {
+    background-color: yellow;
+    text-align: center;
+    padding: 1em 1em 1em 1em;
+    margin-top: 0rem;
+    margin-left: 0rem;
+    margin-right: 0rem;
+    /* Set to this exact width to perfectly fit inside the webpage and spill over/override the web browser's default body padding. */
+    width: 102.5%;
+    justify-self: center;
+    align-self: center;
 }
 /* Hamburger menu. */
 .hamburger {
@@ -224,23 +242,8 @@ footer {
 /**/
 
 /* ---Awards attribute properties.--- */
-/* Awards section. */
-/* .awardsDisplay {
-    display: flex;
-    /* align-items: start; Starts from left and ends at the right. */
+/* NONE FOR RIGHT NOW. */
 
-/* College-level awards and honors images. */
-/* .collegeAwardOne, .collegeAwardTwo, .collegeAwardThree, .collegeAwardFour {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-} */
-/* High school-level awards and honors images. */
-/* .highSchoolAwardOne, .highSchoolAwardTwo, .highSchoolAwardThree, .highSchoolAwardFour {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-} */
 /* Image descriptions. */
 .imageDescription {
     /* display: block; */ /* <----- Please keep commented out for future use, in case. */
@@ -270,14 +273,18 @@ footer {
 .logoButton {
     border-radius: 50px;
     height: 5em;
-    width: 100%;
+    width: 90%;
     text-decoration: none;
     overflow: hidden;
+    background-color: white;
+    justify-self: center;
 }
-/* LinkedIn logo and its logo button; GItHub logo and its logo button. */
-.linkedInLogo, .linkedInLogoButton, .GitHubLogo, .GitHubLogoButton {
-    height: 100%;
-    width: 100%;
+/* LinkedIn logo and its logo button; GitHub logo and its logo button. */
+.linkedInLogo, .linkedInLogoButton, .gitHubLogo, .gitHubLogoButton {
+    max-height: 100%;
+    max-width: 100%;
+    height: auto;
+    width: auto;
     object-fit: cover;
 }
 
@@ -327,6 +334,7 @@ footer {
    Responsive design configurations. */
 /* -----Breakpoint for tablets and larger screens.----- */
 @media screen and (min-width: 768px) {
+    /* Top section of each webpage describing what it is about. */
     .webpage-info-section {
         padding: 0px 0px 0px 0px;
         flex-direction: row;
@@ -336,12 +344,11 @@ footer {
     .paragraph-header { padding: var(--boxPadding); margin: var(--margin); }
     /* Inner wrappers with curved edges on the left side. */
     .left-sided-wrapper {
-        border-right-style: var(--borderRightStyle);
-        border-right-width: var(--borderWidth);
-        border-right-color: var(--borderColor);
         border-top-right-radius: 0px;
         border-bottom-right-radius: 0px;
         border-top-style: none;
+        border-bottom-style: none;
+        border-left-style: none;
         
         width: 50%;
         padding: var(--boxPadding);
@@ -351,9 +358,9 @@ footer {
     }
     /* Inner wrappers with curved edges on the right side. */
     .right-sided-wrapper {
-        border-left-style: var(--borderLeftStyle);
-        border-left-width: var(--borderWidth);
-        border-left-color: var(--borderColor);
+        border-top-style: none;
+        border-bottom-style: none;
+        border-right-style: none;
         border-top-left-radius: 0px;
         border-bottom-left-radius: 0px;
 
@@ -362,6 +369,36 @@ footer {
         margin: 0px 0px 0px 0px;
 
         text-align: center;
+    }
+    /* Paragraph boxes. */
+    .paragraph-box {
+        font-size: 1.3em;
+    }
+    /* Question and paragraph headers. */
+    .questionAndParagraph-header { font-size: 1.2em; }
+    /* Question and paragraph header wrappers. */
+    .qpHeaderWrapper {
+        border-style: none solid none none;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        margin: 0px;
+    }
+    /* Content divided by rows starting on tablets and then larger screens. */
+    .rowOnTablet {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding: 0px;
+    }
+    .reverseRowOnTablet {
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding: 0px;
     }
 }
 
