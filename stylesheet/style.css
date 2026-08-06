@@ -1,9 +1,15 @@
 /* Author: Michael Cortez
    Filename: style.css
-   Last edited: Jul. 22 2026
+   Last edited: Aug. 5 2026
    ---------------------------------------------------------------
    This is where the "beautifulization" of my website takes place. */
 
+/* Global reset. */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 /* Reusable variables. */
 :root {
     /* Border configs. */
@@ -49,11 +55,6 @@
 /* While these are the base styles, they are firstly written for mobile screens, making this a mobile-first approach. */
 /* Adds a fading transition for navigating from one webpage to another like one found in a PowerPoint presentation. */
 @view-transition { navigation: auto; }
-/* Global reset. */
-/* * {
-    margin: 0;
-    padding: 0;
-} */
 
 /* ---Reusable elements.--- */
 body {
@@ -65,19 +66,6 @@ body {
 button {
     display: block; /* Allows for better customization; inline elements are not easily customizable. */
     position: relative; /* "Unlocks" the button from its position. */
-}
-/* Top banner. */
-.banner {
-    background-color: yellow;
-    text-align: center;
-    padding: 1em 1em 1em 1em;
-    margin-top: 0rem;
-    margin-left: 0rem;
-    margin-right: 0rem;
-    /* Set to this exact width to perfectly fit inside the webpage and spill over/override the web browser's default body padding. */
-    width: 102.5%;
-    justify-self: center;
-    align-self: center;
 }
 /* Hamburger menu. */
 .hamburger {
