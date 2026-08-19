@@ -1,15 +1,15 @@
 /* Author: Michael Cortez
    Filename: style.css
-   Last edited: Aug. 5 2026
+   Last edited: Jul. 22 2026
    ---------------------------------------------------------------
    This is where the "beautifulization" of my website takes place. */
 
 /* Global reset. */
-*, *::before, *::after {
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
+
 /* Reusable variables. */
 :root {
     /* Border configs. */
@@ -148,21 +148,15 @@ button {
 /* Paragraph boxes. */
 .paragraph-box {
     padding: var(--boxPadding);
-    font-size: 1.8em;
+    font-size: 1.5em;
     text-align: center;
     margin: var(--paragraphMarginConfig);
     border-radius: var(--paragraphBoxBorderRadius);
     border-style: var(--paragraphBoxBorderStyle);
     border-width: var(--paragraphBoxBorderWidth);
     border-color: var(--paragraphBoxBorderColor);
-    max-width: fit-content;
-}
-/* Question and paragraph header. */
-.questionAndParagraph-header {
     width: fit-content;
-    padding: var(--boxPadding);
-    font-size: 1.5em;
-    text-align: center;
+    hyphens: auto; /* Helps hyphenate words that may be longer than the container allows. */
 }
 /* Question and paragraph header wrapper. */
 .qpHeaderWrapper {
@@ -172,6 +166,15 @@ button {
     border-radius: var(--qpHeaderWrapperBorderRadius);
     padding: var(--boxPadding);
     margin: var(--margin);
+    justify-self: center;
+    align-self: center;
+}
+/* Question and paragraph header. */
+.questionAndParagraph-header {
+    width: fit-content;
+    padding: var(--boxPadding);
+    font-size: 1.5em;
+    text-align: center;
 }
 /* Header - The header that's on the top of every webpage. */
 header {
@@ -271,8 +274,8 @@ footer {
 .linkedInLogo, .linkedInLogoButton, .gitHubLogo, .gitHubLogoButton {
     max-height: 100%;
     max-width: 100%;
-    height: auto;
-    width: auto;
+    /* height: auto;
+    width: auto; */
     object-fit: cover;
 }
 
@@ -330,6 +333,7 @@ footer {
     }
     /* Semantic sections and inner wrappers. */
     .paragraph-header { padding: var(--boxPadding); margin: var(--margin); }
+    .paragraph-header p { align-self: center;}
     /* Inner wrappers with curved edges on the left side. */
     .left-sided-wrapper {
         border-top-right-radius: 0px;
@@ -358,6 +362,8 @@ footer {
 
         text-align: center;
     }
+    /* Section wrapper. */
+    .section-wrapper { padding: 0px 0px 0px 0px; }
     /* Paragraph boxes. */
     .paragraph-box {
         font-size: 1.3em;
@@ -366,28 +372,97 @@ footer {
     .questionAndParagraph-header { font-size: 1.2em; }
     /* Question and paragraph header wrappers. */
     .qpHeaderWrapper {
-        border-style: none solid none none;
-        border-top-right-radius: 0px;
-        border-bottom-right-radius: 0px;
-        margin: 0px;
+        border-style: none;
     }
     /* Content divided by rows starting on tablets and then larger screens. */
-    .rowOnTablet {
+    /* .rowOnTablet, .reverseRowOnTablet {
         display: flex;
-        flex-direction: row;
         flex-wrap: nowrap;
         margin-top: 0px;
         margin-bottom: 0px;
         padding: 0px;
     }
     .reverseRowOnTablet {
-        display: flex;
-        flex-direction: row-reverse;
-        flex-wrap: nowrap;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        padding: 0px;
+        border-top-style: solid;
+        border-top-width: var(--borderWidth);
+        border-top-color: var(--borderColor);
+    } */
+    /* Image wrapper. */
+    .imageWrapper {
+        border: none;
+        justify-self: center;
+        align-self: center;
+        max-height: 100%;
+        max-width: 100%;
     }
+    /* Quadrants. */
+    .q1 { grid-area: q1; }
+    .q2 { grid-area: q2; }
+    .q3 { grid-area: q3; }
+    .q4 { grid-area: q4; }
+    .q1, .q2, .q3, .q4 {
+        border-style: var(--borderStyle);
+        border-color: var(--borderColor);
+        border-width: 1.5px;
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box; /*  */
+        margin: 0;
+    }
+
+    /* ---Index attribute properties.--- */
+    /* Index grid. */
+    .indexGrid {
+        overflow: hidden;
+        display: grid;
+        grid-template-areas:
+        "q1 q2"
+        "q4 q3";
+        grid-template-rows: auto;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .indexGrid > .q1 { border-left-style: none; border-top-style: none; }
+    .indexGrid > .q2 { border-top-style: none; border-right-style: none; }
+    .indexGrid > .q3 { border-right-style: none; border-bottom-style: none; }
+    .indexGrid > .q4 { border-bottom-style: none; border-left-style: none; }
+
+    /* ---About Me attribute properties.--- */
+    /* About me grid. (2x2). */
+    .aboutMeGrid {
+        display: grid;
+        grid-template-areas:
+        "q1 q2"
+        "q4 q3";
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr;
+        grid-row: 1 / 3;
+        grid-column: 1 / 3;
+        gap: 1rem;
+    }
+    .aboutMeGrid > .paragraph-box {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    /* Images used in my About Me. */
+    .proSelfie, .hobbiesInterestsPicOne {
+        border-radius: 25px;
+        object-fit: fill;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* ---Contact Me attribute properties.--- */
+
+    /* ---Links attribute properties.--- */
+    /* Images of website icons. */
+    .linkedInLogo, .gitHubLogo {
+        border-radius: 25px;
+        object-fit: fill;
+        width: 100%;
+        height: 100%;
+    }
+    /*  */
 }
 
 /* -----Breakpoint for desktops and other larger screens.----- */
@@ -413,41 +488,8 @@ footer {
         border-radius: var(--borderRadius);
         margin: var(--margin);
     }
-    /* Inner wrappers with curved edges on the left side. */
-    .left-sided-wrapper {
-        border-style: var(--borderRightStyle);
-        border-right-width: var(--borderWidth);
-        border-right-color: var(--borderColor);
-        border-top-right-radius: 0px;
-        border-bottom-right-radius: 0px;
-        
-        width: 50%;
-        padding: var(--boxPadding);
-        margin: 0px 0px 0px 0px;
-
-        text-align: center;
-    }
-    /* Inner wrappers with curved edges on the right side. */
-    .right-sided-wrapper {
-        border-style: var(--borderLeftStyle);
-        border-left-width: var(--borderWidth);
-        border-left-color: var(--borderColor);
-        border-top-left-radius: 0px;
-        border-bottom-left-radius: 0px;
-
-        width: 50%;
-        padding: var(--boxPadding);
-        margin: 0px 0px 0px 0px;
-
-        text-align: center;
-    }
     /* Question headers. */
     .questionAndParagraph-header { width: fit-content; }
-    /* Body - Background of the entire website. */
-    body {
-        background: var(--bodyBackgroundColor);
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
     /* Hamburger menu. */
     .hamburger, .hb-links-wrapper {
         display: none;
@@ -470,13 +512,14 @@ footer {
         
         gap: 10px; /* Gaps the space in between each link. */
         box-shadow: 0px 0px 10px 0px black; /* Adds a shadow around the border of the nav bar. */
-        width: fit-content; /* Ensures the nav bar only takes up the same amount of space as its contents. */
+        width: fit-content; /* Ensures the nav bar only takes up the same amount of space as its content. */
         align-items: center; /* Centers the links within the nav bar in the center of the y-axis POV. */
         margin-left: auto; /* Pushes the nav bar to the center away from the left margin. */
         margin-right: auto; /* Pushes the nav bar to the center away from the right margin. */
         margin-bottom: 5px; /* "Pushes" elements below the nav bar downward, basically increasing the margin outside the nav bar. */
         transform: translateY(2em); /* Moves the nav bar 25 pixels downward (Negative values move the nav bar upward). */
         overflow: hidden; /* Hides the portion of the active link's shape that spills outside of the nav bar. */
+        padding: var(--boxPadding);
     }
     .top_nav_bar a {
         text-decoration: none;
@@ -499,20 +542,6 @@ footer {
         text-align: center;
 
         flex-direction: column;
-    }
-    /* Info on each webpage. */
-    .webpage-info-section {
-        padding: 0px 0px 0px 0px;
-        display: flex;
-        justify-content: flex-start;
-    }
-    /* The footer. */
-    footer {
-        border-style: solid;
-        border-width: 2px;
-        border-color: black;
-        border-radius: 25px 25px 25px 25px;
-        padding: var(--boxPadding);
     }
 
     /* Index attribute properties. */
