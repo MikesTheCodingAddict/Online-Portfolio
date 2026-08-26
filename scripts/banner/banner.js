@@ -1,10 +1,10 @@
 // Creating the banner.
 const banner = document.createElement('div');
 banner.className = 'banner';
-banner.innerHTML = "<b><p>This website is currently under construction. Some content and features may not be available yet. Please check back later for updates. Thank you for your patience and understanding.</p></b>";
+banner.innerHTML = "<b><p>This website is currently under construction. Some content and features may not be available yet. Layouts are still being worked on actively as well. Please check back later for updates. Thank you for your patience and understanding.</p></b>";
 
 // Styling the banner.
-banner.style.display = 'block'; // Determines the visibility of the banner.
+banner.style.display = 'fixed'; // Determines the visibility of the banner.
 banner.style.top = '0px';
 banner.style.left = '0px';
 banner.style.right = '0px';
