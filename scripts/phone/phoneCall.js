@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	const full = countCode + area + middle + line;
 	const link = document.getElementById("phoneCallLink");
 
-	link.href = `tel:${full}`;
-	link.textContent = "Call Me!";
+	link.addEventListener("click", function() {
+		window.location.href = `tel:${full}`;
+	});
 });

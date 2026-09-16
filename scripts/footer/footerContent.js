@@ -6,10 +6,14 @@
    experience of doing so. */
 
 try {
-   const footerDate = document.getElementById("footerDate");
+   const footerDate = document.getElementById("footer");
 
-   footerDate.textContent = "Created and run by Michael Cortez.";
+   footerDate.innerHTML = `
+   <p>
+      &copy; 2026 Michael Cortez, All rights reserved.
+   </p>
+   `;
    console.log("Footer content loaded successfully.");
-} catch (exception) {
-   console.error("An error occured trying to load the footer content: ", exception);
+} catch (error) {
+   console.error("An error occured trying to load the footer content: ", error);
 }

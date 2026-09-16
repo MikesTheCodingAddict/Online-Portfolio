@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	const full = countCode + area + middle + line;
 	const link = document.getElementById("phoneTextLink");
 
-	link.href = `sms:${full}`;
-	link.textContent = "Text Me!";
+	link.addEventListener("click", function() {
+		window.location.href = `sms:${full}`;
+	});
 });

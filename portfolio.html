@@ -25,7 +25,7 @@
                 <li><a href="index.html">Main</a></li>
                 <li><a href="about_me.html">About Me</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="#">UNDEFINED</a></li>
+                <li style="display: none;"><a href="#">UNDEFINED</a></li>
                 <li><a href="contact_me.html">Contact Me</a></li>
                 <li><a href="links.html">Links</a></li>
             </ul>
@@ -34,7 +34,7 @@
                 <li><a href="index.html">Main</a></li>
                 <li><a href="about_me.html">About Me</a></li>
                 <li><a href="portfolio.html" class="active">Portfolio</a></li>
-                <li><a href="#">UNDEFINED</a></li>
+                <li style="display: none;"><a href="#">UNDEFINED</a></li>
                 <li><a href="contact_me.html">Contact Me</a></li>
                 <li><a href="links.html">Links</a></li>
             </ul>
@@ -44,52 +44,62 @@
         </header>
 
         <main>
-            <section class="section-wrapper webpage-info-section">
-                <div class="questionAndParagraph-header left-sided-wrapper">
-                    <h2>Way Past Cool Projects</h2>
+            <section class="upperGrid">
+                <div class="questionAndParagraph-header q1">
+                    <h2><b>Way Past Cool Projects</b></h2>
                 </div>
-                <div class="paragraph-box right-sided-wrapper">
+                <div class="paragraph-box q2">
                     <p>
                         Check out this portfolio chuck full of my awesome projects!
                     </p>
                 </div>
             </section>
 
-            <section class="section-wrapper portfolioGrid">
+            <section class="portfolioGrid">
                 <div class="q1">
-                    <div class="qpHeaderWrapper questionAndParagraph-header">
+                    <div class="questionAndParagraph-header">
                         <h2>Downtime Projects:</h2>
                     </div>
-                    <div>
-                        <!-- This will be where my "Downtime" projects reside. -->
-                        <details class="dropdownWrapper" !open>
-                            <summary><b>Downtime Projects</b></summary>
-                        </details>
-                    </div>
+                    <!-- This will be where my "Downtime" projects reside. -->
+                    <details class="dropdownWrapper">
+                        <summary><b>Downtime Projects</b></summary>
+                        <div id="downtimeProjectsCard"></div>
+                    </details>
                 </div>
 
                 <div class="q2">
-                    <div class="qpHeaderWrapper questionAndParagraph-header">
-                        <h2>Old-School Projects:</h2>
+                    <div class="questionAndParagraph-header">
+                        <h2>School Projects:</h2>
                     </div>
-                    <div>
-                        <!-- This will be where my "Old-School" projects reside. -->
-                        <details class="dropdownWrapper" !open>
-                            <summary><b>Old-School Projects</b></summary>
-                        </details>
-                    </div>
+                    <!-- This will be where my "Old-School" projects reside. -->
+                    <details class="dropdownWrapper">
+                        <summary><b>School Projects</b></summary>
+                        <div id="schoolProjectsCard"></div>
+                    </details>
                 </div>
+            </section>
+
+            <section>
+                <div class="questionAndParagraph-header">
+                    <h2>Would you like to view the source code for my website? Explore it below!</h2>
+                </div>
+                <details class="dropdownWrapper">
+                    <summary><b>My Portfolio Source Code</b></summary>
+                    <div id="portfolioProjectCard"></div>
+                </details>
             </section>
         </main>
 
         <footer>
-            <span id="footerDate"></span>
+            <span id="footer"></span>
         </footer>
 
         <!-- --JavaScript scripts for this webpage.-- -->
         <!-- Updates the footer's last updated date. -->
-        <script src="./scripts/footer/footerContent.js" defer></script>
+        <script type="text/javascript" src="./scripts/footer/footerContent.js" defer></script>
         <!-- Enables the hamburger menu functionality.-->
-        <script src="./scripts/hamburger/hamburger.js" defer></script>
+        <script type="text/javascript" src="./scripts/hamburger/hamburger.js" defer></script>
+        <!-- The script that everyone's been waiting for... The API script that retrieves my GitHubs repos. -->
+        <script type="text/javascript" src="./scripts/apis/gitHubAPI.js" defer></script>
     </body>
 </html>

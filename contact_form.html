@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="You can submit a form to reach me for any professional inquiries.">
+        <meta name="description" content="You can submit a form to reach me for any professional and reasonable inquiries.">
         <meta name="keywords" content="Michael, Portfolio, Projects, Links, Contact Me, About Me">
         <meta rel="canonical" href="https://michaeljcortez.com/contact_form.html">
         <meta name="author" content="Michael Cortez">
@@ -26,7 +26,7 @@
                     <li><a href="index.html">Main</a></li>
                     <li><a href="about_me.html">About Me</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="#">UNDEFINED</a></li>
+                    <li style="display: none;"><a href="#">UNDEFINED</a></li>
                     <li><a href="contact_me.html">Contact Me</a></li>
                     <li><a href="links.html">Links</a></li>
                 </ul>
@@ -36,7 +36,7 @@
                 <li><a href="index.html">Main</a></li>
                 <li><a href="about_me.html">About Me</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="#">UNDEFINED</a></li>
+                <li style="display: none;"><a href="#">UNDEFINED</a></li>
                 <li><a href="contact_me.html">Contact Me</a></li>
                 <li><a href="links.html">Links</a></li>
             </ul>
@@ -46,38 +46,51 @@
         </header>
 
         <main>
-            <section class="section-wrapper tabletContactForm">
-                <div class="paragraph-box">
+            <section class="upperGrid">
+                <div class="paragraph-box q1">
                     <p>
                         If you would like to reach me for any professional inquiries, please fill out the form below.
                         I will respond to your message as soon as I can. Please ensure that you provide accurate contact
                         information so that I can reach back to you, and you alone.
                     </p>
                 </div>
-                <form method="POST" action="#" class="contactForm">
-                    <label>Name <span>*</span></label>
-                    <input type="text" name="Name" placeholder="John Smith" id="formName" required>
-                    <label>Email <span>*</span></label>
-                    <input type="email" name="Email" placeholder="contactme@email.com" id="formEmail" required>
+                <form method="POST" action="https://api.web3forms.com/submit" class="contactForm q2">
+                    <!-- This is a honeypot field to catch bots in the act of spamming. -->
+                    <input type="text" name="__gotcha" style="display: none;">
+
+                    <input type="hidden" name="access_key" value="9d318362-970e-4177-b996-a3b359fadeb5">
+                    <label>Name <span style="color: red;">*</span></label>
+                    <input type="text" name="Name" placeholder="(required)" id="formName" required>
+                    <label>Email <span style="color: red;">*</span></label>
+                    <input type="email" name="Email" placeholder="(required)" id="formEmail" required>
+                    <label for="reason">Reason <span style="color: red;">*</span></label>
+                    <select id="reason" name="reasonForContact" required>
+                        <option value="" disabled selected>——Please make a selection——</option>
+                        <option value="opportunity">Job / Contract Opportunity</option>
+                        <option value="freelance">Freelance Project Inquiry</option>
+                        <option value="feedback">Feedback on Website</option>
+                        <option value="general">General Question</option>
+                        <option value="casual">Just Saying Hello</option>
+                    </select>
                     <label>Phone</label>
                     <input type="tel" name="Phone" placeholder="+1 (000) 000-0000" id="formPhone">
                     <label>Website</label>
                     <input type="url" name="Website" placeholder="https://www.website.com" id="formURL">
-                    <label>Message <span>*</span></label>
-                    <textarea type="text" name="Message" placeholder="Type a message here..." id="formMessage" required></textarea>
+                    <label>Message <span style="color: red;">*</span></label>
+                    <textarea type="text" name="Message" placeholder="(required)" id="formMessage" required></textarea>
                     <br><button type="submit" id="submitFormButton">Send</button>
                 </form>
             </section>
         </main>
 
         <footer>
-            <span id="footerDate"></span>
+            <span id="footer"></span>
         </footer>
 
         <!-- --JavaScript scripts for this webpage.-- -->
         <!-- Updates the footer's last updated date. -->
-        <script src="./scripts/footer/footerContent.js" defer></script>
+        <script type="text/javascript" src="./scripts/footer/footerContent.js" defer></script>
         <!-- Enables the hamburger menu functionality.-->
-        <script src="./scripts/hamburger/hamburger.js" defer></script>
+        <script type="text/javascript" src="./scripts/hamburger/hamburger.js" defer></script>
     </body>
 </html>

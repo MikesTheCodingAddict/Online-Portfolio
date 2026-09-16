@@ -1,0 +1,801 @@
+/* Author: Michael Cortez
+   Filename: style.css
+   Last edited: Sept. 13 2026
+   ---------------------------------------------------------------
+   This is where the "beautifulization" of my website takes place. */
+
+/* Global reset. */
+* { margin: 0; padding: 0; }
+/* Reusable variables. */
+:root {
+    /* Border configs. */
+    --borderStyle: solid;
+    --borderRightStyle: none solid none none;
+    --borderLeftStyle: none none none solid;
+    --borderWidth: 0.2em;
+    --borderColor: black;
+    --borderRadius: 2em;
+    /* Body configs. */
+    --bodyBackgroundColor: lightsteelblue;
+    --bodyFontFamily: Verdana, Geneva, Tahoma, sans-serif;
+    /* Header configs. */
+    --headerBorderStyle: solid;
+    --headerBorderWidth: 0.2rem;
+    --headerBorderColor: black;
+    /* Box configs. */
+    --boxPadding: 0.6em;
+    /* Image configs. */
+    --imageBorderStyle: solid;
+    --imageBorderWidth: 3px;
+    --imageBorderColor: black;
+    --imageBorderRadius: 2em;
+    /* Paragraph boxes configs. */
+    --paragraphBoxBorderStyle: solid;
+    --paragraphBoxBorderWidth: 0.11em;
+    --paragraphBoxBorderColor: black;
+    --paragraphBoxBorderRadius: 0.7em;
+    --paragraphMarginConfig: 0.25em;
+    /* Question and paragraph header wrapper configs. */
+    --qpHeaderWrapperBorderStyle: solid;
+    --qpHeaderWrapperBorderWidth: 0.13em;
+    --qpHeaderWrapperBorderColor: black;
+    --qpHeaderWrapperBorderRadius: 0.9em;
+    /* Other configs. */
+    --hoverOpacity: 50%;
+    --margin: 0.25em;
+}
+
+/* CHAPTER ONE: 
+   Base styles. */
+/* While these are the base styles, they are firstly written for mobile screens, making this a mobile-first approach. */
+
+/* ---Repeated classes.--- */
+body {
+    background-color: var(--bodyBackgroundColor);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    min-height: 100dvh; /* Expands the height of each webpage to the full height of each screen no matter what resolution. */
+}
+/* Header - The header that's on the top of every webpage. */
+header {
+    background-color: white;
+    border-style: var(--headerBorderStyle);
+    border-width: var(--headerBorderWidth);
+    border-color: var(--headerBorderColor);
+    border-radius: var(--borderRadius);
+    padding: var(--boxPadding);
+    text-align: center;
+    margin: 2%;
+    font-size: 1em;
+}
+main { padding: 2%; flex-grow: 1; /* Lets the main content on each webpage grow and take up all the space on the screen no matter the zoom level. */ }
+/* Default button config(s). */
+button {
+    display: block; /* Allows for better customization; inline elements are not easily customizable. */
+    position: relative; /* "Unlocks" the button from its position. */
+    background-color: black;
+    border-radius: 0.6em;
+    padding: 0.6em;
+    margin: 5px;
+    color: white;
+    font-size: 1.2rem;
+    justify-self: center;
+    cursor: pointer;
+}
+button:hover { opacity: var(--hoverOpacity); }
+/* Hamburger menu. */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: fixed;
+    top: 0;
+    z-index: 9999; /* The Z-Index property helps the element overlap every other element on the webpage. */
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    height: 5em;
+    width: 5em;
+    border-radius: 25%;
+    border-color: gray;
+    border-style: var(--borderStyle);
+    background-color: gray;
+    justify-content: center;
+    justify-self: left;
+    align-items: center;
+    transform: translateY(2em);
+}
+.hamburger:focus { opacity: 60%; }
+.hamburger .line {
+    width: 90%;
+    height: 5px;
+    border-radius: 2px;
+    background-color: black;
+}
+.hb-links-wrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    width: fit-content;
+    max-height: 80vh;
+    border-style: var(--borderStyle);
+    border-width: var(--borderWidth);
+    border-color: var(--borderColor);
+    border-radius: var(--borderRadius);
+    margin-top: 4rem;
+    background-color: lightskyblue;
+
+    flex-direction: column;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 10px;
+    gap: 10px;
+    transform: translateX(3em);
+    overflow-y: auto; /* This allows for scrolling when content overflows. */
+}
+.hb-links-wrapper li { margin: 10px; }
+.hb-links-wrapper a {
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px;
+    border-width: 0.1em;
+    border-style: var(--borderStyle);
+    border-color: var(--borderColor);
+    border-radius: var(--borderRadius);
+    background-color: lightseagreen;
+    color: azure;
+}
+/* Nav links. */
+.nav-links { list-style: none; display: none; }
+/* Semantic section wrappers. */
+section {
+    border-style: var(--borderStyle);
+    border-width: var(--borderWidth);
+    border-color: var(--borderColor);
+    border-radius: var(--borderRadius);
+    background-color: silver;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 0.5em; /* 0.5em times 16 is equal to 8 pixel units. */
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Paragraph boxes. */
+.paragraph-box {
+    background-color: lightgray;
+    overflow: hidden;
+    padding: var(--boxPadding);
+    font-size: 1.5rem;
+    text-align: center;
+    margin: var(--paragraphMarginConfig);
+    border-radius: var(--paragraphBoxBorderRadius);
+    border-style: var(--paragraphBoxBorderStyle);
+    border-width: var(--paragraphBoxBorderWidth);
+    border-color: var(--paragraphBoxBorderColor);
+    width: fit-content;
+    hyphens: auto; /* Helps hyphenate words that may be longer than the container allows. */
+}
+/* Question and paragraph header wrapper. */
+.qpHeaderWrapper {
+    background-color: lightgray;
+    border-style: var(--qpHeaderWrapperBorderStyle);
+    border-width: var(--qpHeaderWrapperBorderWidth);
+    border-color: var(--qpHeaderWrapperBorderColor);
+    border-radius: var(--qpHeaderWrapperBorderRadius);
+    padding: var(--boxPadding);
+    margin: var(--margin);
+    justify-self: center;
+    align-self: center;
+}
+/* Question and paragraph header. */
+.questionAndParagraph-header {
+    width: fit-content;
+    padding: var(--boxPadding);
+    font-size: 1.2em;
+    text-align: center;
+}
+/* Image wrapper. */
+.imageWrapper {
+    border-style: var(--imageBorderStyle);
+    border-width: var(--imageBorderWidth);
+    border-color: var(--imageBorderColor);
+    border-radius: var(--imageBorderRadius);
+
+    display: flex;
+    height: 100%;
+    width: 95%;
+    overflow: hidden;
+    margin: auto;
+}
+/* "Logoed" buttons. */
+.logoButton {
+    border-radius: 50px;
+    height: 5em;
+    width: 90%;
+    text-decoration: none;
+    overflow: hidden;
+    background-color: white;
+    justify-self: center;
+    justify-content: center;
+    align-content: center;
+}
+/* Default list style for dropdown menus. */
+details > summary { list-style: none; }
+/* Dropdown menu wrapper. */
+.dropdownWrapper {
+    border-style: var(--borderStyle);
+    border-color: var(--borderColor);
+    border-width: var(--borderWidth);
+    border-radius: var(--borderRadius);
+    width: 90%;
+    padding: 0.2em;
+    list-style-type: none;
+    justify-self: center;
+    text-align: center;
+    overflow: hidden;
+    margin: 5px;
+}
+/* Blockquotes. */
+blockquote {
+    border-style: var(--borderStyle);
+    border-color: var(--borderColor);
+    border-width: var(--borderWidth);
+    border-radius: var(--borderRadius);
+    padding: var(--boxPadding);
+    background-color: aliceblue;
+    font-size: 1.7rem;
+    width: auto;
+    text-align: center;
+    align-self: center;
+}
+/* The footer. */
+footer {
+    background-color: white;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 25px 25px 25px 25px;
+    padding: var(--boxPadding);
+    text-align: center;
+    margin: 2%;
+}
+
+/* ---Index attribute properties.--- */
+/* Pictures. */
+.gradSelfie, .portfolioPic, .contactMePic, .professionalSpaces {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* ---About Me attribute properties.--- */
+/* Professional "selfie" and hobbies & interests picture. */
+.proSelfie, .computerProgrammingPic, .volunteeringTechHelpPic, .scrabbleTilesPic {
+    height: auto;
+    width: 100%;
+    object-fit: cover; /* The cover value helps "fit within" or "fill up" the entire parent image wrapper. */
+}
+
+/* ---Portfolio attribute porperties.--- */
+/* Card containers. */
+#downtimeProjectsCard, #schoolProjectsCard, #portfolioProjectCard {
+    padding: 10px;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    justify-self: center;
+}
+/* Repository cards. */
+.repositoryCard {
+    display: flex;
+    flex-direction: column;
+    border-style: var(--borderStyle);
+    border-color: var(--borderColor);
+    border-width: 0.125em;
+    border-radius: 15px;
+    width: 85%;
+    margin-top: 20px;
+    padding: var(--boxPadding);
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+}
+.repositoryCard > .paragraph-box { max-height: 300px; overflow-y: auto; }
+/* Coding projects image. */
+.codingProjectImage {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* ---Testimonials attribute properties.--- */
+/**/
+
+/* ---Contact Me attribute properties.--- */
+/* Mail boxes and rotary telephone images.*/
+.contactFormMailImage, .rotaryTelephoneImage {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* ---Links attribute properties.--- */
+/* LinkedIn logo and its logo button; GitHub logo and its logo button. */
+.linkedInLogo, .gitHubLogo {
+    height: auto;
+    width: 100%;
+    object-fit: fill;
+    transform: scale(102%);
+}
+.linkedInLogoButton, .gitHubLogoButton {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(80%);
+}
+
+/* ---Contact Form attribute properties.--- */
+/* Contact form. */
+.contactForm {
+    background-color: lightgray;
+    padding: var(--boxPadding);
+    border-style: var(--borderStyle);
+    border-width: var(--borderWidth);
+    border-color: var(--borderColor);
+    border-radius: var(--paragraphBoxBorderRadius); /* Using the paragraph box border radius here to make the form shape uniform to the rest of the webpage. */
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    align-items: center;
+    width: 95%;
+    margin: inherit;
+    overflow: hidden;
+    box-sizing: border-box;
+    font-size: 1.2em;
+}
+.contactForm label, .contactForm input, .contactForm textArea, .contactForm button, .contactForm select {
+    width: 80%;
+}
+.contactForm textArea { max-width: 100%; box-sizing: border-box; }
+/* Form fields. */
+#formName, #formEmail, #formPhone, #formURL, #formMessage, #reason {
+    border-style: var(--borderStyle);
+    border-width: var(--borderWidth);
+    border-color: var(--borderColor);
+    border-radius: var(--borderRadius);
+    margin: var(--margin);
+    padding: var(--boxPadding);
+
+    overflow: hidden;
+}
+/* Customizes what happens when an input field is selected. */
+#formName:focus, #formEmail:focus, #formPhone:focus, #formURL:focus, #formMessage:focus, #reason:focus {
+    outline: none; /* Removes the default yellow outline upon interaction. */
+    border-color: darkblue;
+}
+/* Submit button. */
+#submitFormButton { border-radius: var(--borderRadius); }
+
+/* CHAPTER TWO:
+   Responsive design configurations. */
+/* -----Breakpoint for tablet screens.----- */
+@media screen and (min-width: 768px) {
+    /* ---Repeated classes.--- */
+    /* Hamburger links wrapper. */
+    .hb-links-wrapper {
+        display: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        transform: translateX(2.5em);
+    }
+    /* Top section of each webpage describing what it is about. */
+    .webpage-info-section, .otherInfoWrapper {
+        padding: 0;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    /* Paragraph headers and their internal paragraphs. */
+    .paragraph-header { padding: var(--boxPadding); margin: var(--margin); }
+    .paragraph-header p { align-self: center;}
+    /* Inner wrappers with curved edges on the left and right sides. */
+    .left-sided-wrapper {
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-top-style: none;
+        border-bottom-style: none;
+        border-left-style: none;
+        
+        width: 50%;
+        padding: var(--boxPadding);
+        margin: 0px 0px 0px 0px;
+
+        text-align: center;
+    }
+    .right-sided-wrapper {
+        border-top-style: none;
+        border-bottom-style: none;
+        border-right-style: none;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+
+        width: 50%;
+        padding: var(--boxPadding);
+        margin: 0px 0px 0px 0px;
+
+        text-align: center;
+    }
+    /* Section wrapper. */
+    section { padding: 0; }
+    /* Paragraph boxes. */
+    .paragraph-box { font-size: 1.6em; padding: 15px; }
+    /* Question and paragraph headers. */
+    .questionAndParagraph-header { font-size: 1.5em; }
+    /* Question and paragraph header wrappers. */
+    .qpHeaderWrapper { border-style: none; }
+    /* Image wrapper. */
+    .imageWrapper { border-style: none; }
+    /* Dropdowns. */
+    .dropdownWrapper { padding: var(--boxPadding); }
+    /* Quadrants. */
+    .q1 { grid-area: q1; }
+    .q2 { grid-area: q2; }
+    .q3 { grid-area: q3; }
+    .q4 { grid-area: q4; }
+    .q5 { grid-area: q5; }
+    .q6 { grid-area: q6; }
+    .q7 { grid-area: q7; }
+    .q8 { grid-area: q8; }
+    .q1, .q2, .q3, .q4, .q5, .q6, .q7, .q8 {
+        display: flex;
+        border-style: var(--borderStyle);
+        border-color: var(--borderColor);
+        border-width: 1.5px;
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box; /* This property and value forces the content to stay inside the container's border and not spill outside of it. */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        overflow: hidden;
+    }
+    /* Grids. */
+    .upperGrid, .indexGrid, .aboutMeGrid, .portfolioGrid, .contactMeGrid, .linksGrid {
+        display: grid;
+        overflow: hidden;
+        grid-template-rows: auto;
+    }
+    /* Upper grids. */
+    .upperGrid { grid-template-areas: "q1 q2"; grid-template-columns: repeat(2, 1fr); }
+    .upperGrid > .q1 { border-top-style: none; border-left-style: none; border-bottom-style: none; }
+    .upperGrid > .q2 { border-top-style: none; border-right-style: none; border-bottom-style: none; }
+
+    /* ---Index attribute properties.--- */
+    /* Index grid (2x6). */
+    .indexGrid {
+        grid-template-areas:
+        "q1 q2"
+        "q4 q3"
+        "q5 q6";
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .indexGrid > .q1 { border-left-style: none; border-top-style: none; }
+    .indexGrid > .q2 { border-top-style: none; border-right-style: none; }
+    .indexGrid > .q3 { border-right-style: none; }
+    .indexGrid > .q4 { border-left-style: none; }
+    .indexGrid > .q5 { border-bottom-style: none; border-left-style: none; }
+    .indexGrid > .q6 { border-bottom-style: none; border-right-style: none; }
+    /* Images. */
+    .gradSelfie, .portfolioPic, .contactMePic, .professionalSpaces {
+        width: 90%;
+        margin: 5em;
+        border-radius: var(--imageBorderRadius);
+    }
+
+    /* ---About Me attribute properties.--- */
+    /* About me grid. (2x8). */
+    .aboutMeGrid {
+        grid-template-areas:
+        "q1 q2"
+        "q4 q3"
+        "q5 q6"
+        "q8 q7";
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .aboutMeGrid > .paragraph-box {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .aboutMeGrid > .q1 { border-left-style: none; border-top-style: none; }
+    .aboutMeGrid > .q2 { border-top-style: none; border-right-style: none; }
+    .aboutMeGrid > .q3, .aboutMeGrid > .q6 { border-right-style: none; }
+    .aboutMeGrid > .q4, .aboutMeGrid > .q5 { border-left-style: none; }
+    .aboutMeGrid > .q7 { border-right-style: none; border-bottom-style: none; }
+    .aboutMeGrid > .q8 { border-left-style: none; border-bottom-style: none; }
+    /* Images. */
+    .proSelfie, .computerProgrammingPic, .volunteeringTechHelpPic, .scrabbleTilesPic {
+        width: 90%;
+        margin: 5em;
+        border-radius: var(--imageBorderRadius);
+    }
+
+    /* ---Portfolio attribute properties.--- */
+    /* Portfolio grid. */
+    .portfolioGrid {
+        grid-template-areas:
+        "q1 q2";
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .portfolioGrid > .q1 { border-left-style: none; border-top-style: none; border-bottom-style: none; }
+    .portfolioGrid > .q2 { border-right-style: none; border-top-style: none; border-bottom-style: none; }
+    /* Card containers. */
+    #downtimeProjectsCard, #schoolProjectsCard, #portfolioProjectCard {
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+        overflow-x: auto;
+        max-width: 100%;
+        padding: 0.5em;
+        box-sizing: border-box;
+    }
+    /* The repo cards themselves. */
+    .repositoryCard {
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 280px;
+        margin-top: 10px;
+    }
+    .repositoryCard > .imageWrapper { max-height: 200px; }
+    /* Coding projects image. */
+    .codingProjectImage {
+        height: auto;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    /* ---Testimonials attribute properties.--- */
+    /**/
+
+    /* ---Contact Me attribute properties.--- */
+    /* Contact Me grid. (2x2). */
+    .contactMeGrid {
+        grid-template-areas:
+        "q1 q2"
+        "q4 q3";
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .contactMeGrid > .q1 { border-left-style: none; border-top-style: none; }
+    .contactMeGrid > .q2 { border-top-style: none; border-right-style: none; }
+    .contactMeGrid > .q3 { border-right-style: none; border-bottom-style: none; }
+    .contactMeGrid > .q4 { border-bottom-style: none; border-left-style: none; }
+    /* Images. */
+    .contactFormMailImage, .rotaryTelephoneImage {
+        width: 90%;
+        border-radius: var(--imageBorderRadius);
+    }
+
+    /* ---Links attribute properties.--- */
+    /* Links grid. (2x2). */
+    .linksGrid {
+        grid-template-areas:
+        "q1 q2"
+        "q4 q3";
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .linksGrid > .q1 { border-left-style: none; border-top-style: none; }
+    .linksGrid > .q2 { border-top-style: none; border-right-style: none; }
+    .linksGrid > .q3 { border-right-style: none; border-bottom-style: none; }
+    .linksGrid > .q4 { border-bottom-style: none; border-left-style: none; }
+    /* Images. */
+    .linkedInLogo, .gitHubLogo {
+        width: 90%;
+        border-radius: var(--imageBorderRadius);
+    }
+    .linkedInLogoButton, .gitHubLogoButton { transform: scale(70%); }
+
+    /* ---Contact Form attribute properties.--- */
+    /* Contact form. */
+    .contactForm {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    /* Form fields. */
+    .contactForm label, .contactForm input, .contactForm textArea, .contactForm button, .contactForm select { 
+        width: 70%;
+    }
+}
+
+/* -----Breakpoint for standard-sized desktops.----- */
+@media screen and (min-width: 1024px) {
+    /* ---Repeated classes.--- */
+    /* A Links that currently matches the open one. */
+    a.active {
+        background: gray;
+        border-radius: var(--borderRadius);
+        padding: var(--boxPadding);
+    }
+    /* Hamburger menu and its wrapper. */
+    .hamburger, .hb-links-wrapper { display: none; }
+    /* The top navigation bar. */
+    .top_nav_bar {
+        border-style: var(--borderStyle);
+        border-width: var(--borderWidth);
+        border-color: var(--borderColor);
+        border-radius: 50px;
+        background: lightsteelblue;
+
+        display: flex; /* Activates Flexbox. */
+        flex-wrap: wrap; /* Allows links to wrap down into another line when webpage is zoomed in. */
+
+        justify-content: space-evenly; /* Spaces out the links within the nav bar. */
+        list-style: none;
+        position: sticky; /* "Sticks" the nav bar out to remain visible while scrolling. */
+        top: 0; /* Needed for "unlocking" the stickiness and standing out in front of other elements throughout scrolling. */
+        z-index: 9999;
+        
+        box-shadow: 0px 0px 10px 0px black; /* Adds a shadow around the border of the nav bar. */
+        width: fit-content; /* Ensures the nav bar only takes up the same amount of space as its content. */
+        align-items: center; /* Centers the links within the nav bar in the center of the y-axis POV. */
+        margin-left: auto; /* Pushes the nav bar to the center away from the left margin. */
+        margin-right: auto; /* Pushes the nav bar to the center away from the right margin. */
+        margin-bottom: 5px; /* "Pushes" elements below the nav bar downward, basically increasing the margin outside the nav bar. */
+        transform: translateY(2em); /* Moves the nav bar 25 pixels downward (Negative values move the nav bar upward). */
+        overflow: hidden; /* Hides the portion of the active link's shape that spills outside of the nav bar. */
+        padding: var(--boxPadding);
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .top_nav_bar a {
+        text-decoration: none;
+        cursor: pointer;
+        padding: 15px; /* This padding config creates a specific amount of internal space between the links and the nav bar. */
+    }
+    .top_nav_bar a:hover { opacity: 60%; }
+    /* Nav links. */
+    .nav-links { list-style: none; display: flex; }
+    /* Header - The header that's on the top of every webpage. */
+    header { border-width: var(--borderWidth); }
+    /* Paragraph boxes. */
+    .paragraph-box { font-size: 1.8em; padding: 20px; }
+    /* Question and paragraph headers. */
+    .questionAndParagraph-header { font-size: 1.6em; }
+    /* Configuring what happens when the mouse hovers over the dropdowns. */
+    .dropdownWrapper > summary:hover { cursor: pointer; opacity: 70%; }
+
+    /* ---Index attribute properties.--- */
+    /**/
+
+    /* ---About Me attribute properties.--- */
+    /**/
+
+    /* ---Portfolio attribute porperties.--- */
+    /**/
+
+    /* ---Testimonials attribute properties.--- */
+    /**/
+
+    /* ---Contact Me attribute properties.--- */ 
+    /**/
+
+    /* ---Links attribute properties.--- */
+    /* Logo buttons. */
+    .linkedInLogoButton, .gitHubLogoButton { object-fit: contain; transform: scale(200%); }
+
+    /* ---Contact Form attribute properties.--- */
+    /* Form fields. */
+    .contactForm label, .contactForm input, .contactForm textArea, .contactForm button, .contactForm select { 
+        width: 60%;
+    }
+}
+
+/* -----Breakpoint for 1440p screens.----- */
+@media screen and (min-width: 1440px) {
+    /* ---Repeated classes.--- */
+    /* Header. */
+    header { font-size: 2em; }
+    /* Question and paragraph headers. */
+    .questionAndParagraph-header { font-size: 1.8em; }
+    /* Paragraph boxes. */
+    .paragraph-box { font-size: 2em; padding: 30px; }
+    /* Top navigation bar. */
+    .top_nav_bar {
+        border-width: 0.15em; /* Changing the border width of the nav bar because it is intended to look nearly the same in appearance if not identical compared to other resolutions. */
+        zoom: 150%; /* Using the non-standard zoom property instead of transform's scale() method because zoom magnifies the nav bar while retaining its placement, which was my goal. */
+    }
+    /* Section wrappers. */
+    section { border-width: 0.3em; }
+    /* Buttons. */
+    button { font-size: 0.8em; }
+    /* The footer. */
+    footer { font-size: 1.8em; }
+    /* Quadrants. */
+    .q1, .q2, .q3, .q4, .q5, .q6, .q7, .q8 { border-width: 0.1em; }
+
+    /* ---Index attribute properties.--- */
+    /**/
+
+    /* ---About Me attribute properties.--- */
+    /**/
+
+    /* ---Portfolio attribute properties.--- */
+    /**/
+
+    /* ---Testimonials attribute properties.--- */
+    /**/
+
+    /* ---Contact Me attribute properties.--- */
+    /**/
+
+    /* ---Links attribute properties.--- */
+    /* Images. */
+    .linkedInLogo, .gitHubLogo { transform: scale(90%); }
+
+    /* ---Contact Form attribute properties.--- */
+    /* Form fields. */
+    .contactForm label, .contactForm input, .contactForm textArea, .contactForm button, .contactForm select { 
+        font-size: 1.4em;
+        width: 70%;
+    }
+}
+
+/* -----Breakpoint for 4K screens and larger.----- */
+@media screen and (min-width: 2560px) {
+    /* ---Repeated classes.--- */
+    /* Top navigation bar. */
+    .top_nav_bar { zoom: 250%; }
+    /* Header. */
+    header { font-size: 2.5em; }
+    /* Question and paragraph headers. */
+    .questionAndParagraph-header { font-size: 2em; }
+    /* Paragraph boxes. */
+    .paragraph-box { font-size: 3.5em; padding: 40px; }
+    /* Buttons. */
+    button { font-size: 1em; }
+    /* Section wrappers. */
+    section { border-width: 0.5em; }
+    /* Dropdown wrappers. */
+    .dropdownWrapper {
+        width: 90%;
+        padding: 0.5em;
+        font-size: 2em;
+    }
+    /* The footer. */
+    footer { font-size: 3rem; }
+
+    /* ---Index attribute properties.--- */
+    /**/
+
+    /* ---About Me attribute properties.--- */
+    /**/
+
+    /* ---Portfolio attribute properties.--- */
+    /* Repository card paragraph boxes (Font size adjusted for 4K resolution and up). */
+    .repositoryCard > .paragraph-box { font-size: 1.5em; }
+
+    /* ---Testimonials attribute properties.--- */
+    /**/
+
+    /* ---Contact Me attribute properties.--- */
+    /**/
+
+    /* ---Links attribute properties.--- */
+    /* Images. */
+    .linkedInLogo, .gitHubLogo { transform: scale(90%); }
+
+    /* ---Contact Form attribute properties.--- */
+    /* Form fields. */
+    .contactForm label, .contactForm input, .contactForm textArea, .contactForm button, .contactForm select { 
+        font-size: 1.6em;
+        width: 60%;
+    }
+}
