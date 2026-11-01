@@ -1,6 +1,6 @@
 # Online-Portfolio
-## NOTE: This project is currently unfinished and is actively being worked on. It is in the Alpha stage as of July 29, 2026.
-This is my official online portfolio website, the source code written by yours truly. It is also my very first webdev project.
+## NOTE: This project is currently finished and is still worked on from time to time. It is in the Stable stage as of October 31, 2026.
+This is my official online portfolio website, the source code written by yours truly. It is also my very first major web-dev project.
 
 Here is the technology stack being used in this project:
 - HTML5
