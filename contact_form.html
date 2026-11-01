@@ -6,55 +6,67 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="You can submit a form to reach me for any professional and reasonable inquiries.">
         <meta name="keywords" content="Michael, Portfolio, Projects, Links, Contact Me, About Me">
-        <meta rel="canonical" href="https://michaeljcortez.com/contact_form.html">
         <meta name="author" content="Michael Cortez">
-        
+        <link rel="canonical" href="https://michaeljcortez.com/contact_form.html">
+        <link rel="icon" type="image/x-icon" href="./images/websiteLogo/websiteLogoFavicon.jpeg">
         <link rel="stylesheet" href="./stylesheets/style.css" type="text/css">
-
+        <!-- Patch for 1024px screens since the cause of the internal margining inside the nav bar in the Contact Form webpage is currently unknown. -->
+        <style>
+            @media screen and (min-width: 1024px) and (max-width: 1439px) {
+                .top_nav_bar {
+                    max-height: 4em;
+                }
+            }
+        </style>
+        <noscript>
+            <style>
+                /* Fallback style in case the JavaScript-powered animations is either disabled or is not functioning properly. */
+                .hidden {
+                    opacity: 1 !important;
+                }
+            </style>
+        </noscript>
         <title>Michael's Portfolio - Contact Form</title>
     </head>
 
     <body>
+        <div class="logoImageWrapper">
+            <img src="./images/websiteLogo/websiteLogoFull.jpeg" alt="Website logo." class="websiteLogoFullImageAtTop">
+        </div>
         <nav class="top_nav_bar">
             <button class="hamburger" id="hamburger" type="button" onclick="hamburger()" aria-expanded="false" aria-controls="hb-links-wrapper">
                 <span class="line"></span>
                 <span class="line"></span>
                 <span class="line"></span>
             </button>
-            <div>
-                <ul class="hb-links-wrapper" id="hb-links-wrapper">
-                    <li><a href="index.html">Main</a></li>
-                    <li><a href="about_me.html">About Me</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li style="display: none;"><a href="#">UNDEFINED</a></li>
-                    <li><a href="contact_me.html">Contact Me</a></li>
-                    <li><a href="links.html">Links</a></li>
-                </ul>
-            </div>
-
-            <ul class="nav-links">
+            <ul class="hb-links-wrapper" id="hb-links-wrapper">
                 <li><a href="index.html">Main</a></li>
                 <li><a href="about_me.html">About Me</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
-                <li style="display: none;"><a href="#">UNDEFINED</a></li>
                 <li><a href="contact_me.html">Contact Me</a></li>
-                <li><a href="links.html">Links</a></li>
+            </ul>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Main</a></li>
+                <li><a href="about_me.html">About Me</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact_me.html">Contact Me</a></li>
             </ul>
         </nav>
-        <header>
+        <header class="webpageInfo">
             <h1><br>Contact Form</h1>
         </header>
 
         <main>
-            <section class="upperGrid">
-                <div class="paragraph-box q1">
+            <section class="upperGrid" style="padding: 1em;">
+                <div class="paragraph-box q1 hidden">
                     <p>
                         If you would like to reach me for any professional inquiries, please fill out the form below.
                         I will respond to your message as soon as I can. Please ensure that you provide accurate contact
                         information so that I can reach back to you, and you alone.
                     </p>
                 </div>
-                <form method="POST" action="https://api.web3forms.com/submit" class="contactForm q2">
+                <form method="POST" action="https://api.web3forms.com/submit" class="contactForm q2 hidden">
                     <!-- This is a honeypot field to catch bots in the act of spamming. -->
                     <input type="text" name="__gotcha" style="display: none;">
 
@@ -77,20 +89,36 @@
                     <label>Website</label>
                     <input type="url" name="Website" placeholder="https://www.website.com" id="formURL">
                     <label>Message <span style="color: red;">*</span></label>
-                    <textarea type="text" name="Message" placeholder="(required)" id="formMessage" required></textarea>
+                    <textarea contenteditable="true" name="Message" placeholder="(required)" id="formMessage" required></textarea>
                     <br><button type="submit" id="submitFormButton">Send</button>
                 </form>
             </section>
         </main>
 
-        <footer>
-            <span id="footer"></span>
+        <footer id="footer">
+            <noscript>
+                <h2 style="text-align: left;">JavaScript is currently disabled or is not functioning properly. Some content and features may be limited or not display correctly.</h2>
+                <ul style="list-style: none;">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about_me.html">About Me</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact_me.html">Contact Me</a></li>
+                </ul>
+                <span style="display: inline-block; width: 100%; text-align: left;">&copy; 2026 Michael Cortez. All rights reserved.</span>
+            </noscript>
         </footer>
 
-        <!-- --JavaScript scripts for this webpage.-- -->
+        <!-- JavaScript scripts for this webpage. -->
         <!-- Updates the footer's last updated date. -->
-        <script type="text/javascript" src="./scripts/footer/footerContent.js" defer></script>
+        <script defer type="text/javascript" src="./scripts/footer/footerContent.js"></script>
         <!-- Enables the hamburger menu functionality.-->
-        <script type="text/javascript" src="./scripts/hamburger/hamburger.js" defer></script>
+        <script defer type="text/javascript" src="./scripts/hamburger/hamburger.js"></script>
+        <!-- Handles phone calls and texts. -->
+        <script defer type="text/javascript" src="./scripts/phone/phoneCall.js"></script>
+        <script defer type="text/javascript" src="./scripts/phone/phoneText.js"></script>
+        <!-- Injects dark mode functionality, a very much long awaited feature. -->
+        <script defer type="text/javascript" src="./scripts/darkMode/darkMode.js"></script>
+        <!-- Injects the new animations that reveal upward. -->
+        <script defer type="text/javascript" src="./scripts/animations/revealUp.js"></script>
     </body>
 </html>

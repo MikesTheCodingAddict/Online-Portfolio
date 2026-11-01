@@ -6,16 +6,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="This is my portfolio showcasing some of my works and gives an overview of who I am.">
         <meta name="keywords" content="Michael, Portfolio, Projects, Links, Contact Me, About Me">
-        <meta rel="canonical" href="https://michaeljcortez.com">
         <meta name="author" content="Michael Cortez">
-        
+        <link rel="canonical" href="https://michaeljcortez.com">
+        <link rel="icon" type="image/x-icon" href="./images/websiteLogo/websiteLogoFavicon.jpeg">
         <link rel="stylesheet" href="./stylesheets/style.css" type="text/css">
-
+        <noscript>
+            <style>
+                /* Fallback style in case the JavaScript-powered animations is either disabled or is not functioning properly. */
+                .hidden {
+                    opacity: 1 !important;
+                }
+            </style>
+        </noscript>
         <title>Michael's Portfolio</title>
     </head>
 
     <body>
-        <nav class="top_nav_bar">
+        <div class="logoImageWrapper">
+            <img src="./images/websiteLogo/websiteLogoFull.jpeg" alt="Website logo." class="websiteLogoFullImageAtTop">
+        </div>
+        <nav class="top_nav_bar" id="top_nav_bar">
             <button class="hamburger" id="hamburger" type="button" onclick="hamburger()" aria-expanded="false" aria-controls="hb-links-wrapper">
                 <span class="line"></span>
                 <span class="line"></span>
@@ -26,101 +36,114 @@
                     <li><a href="index.html">Main</a></li>
                     <li><a href="about_me.html">About Me</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
-                    <li style="display: none;"><a href="#">UNDEFINED</a></li>
                     <li><a href="contact_me.html">Contact Me</a></li>
-                    <li><a href="links.html">Links</a></li>
                 </ul>
             </div>
 
-            <ul class="nav-links">
+            <ul class="nav-links" id="nav-links">
                 <li><a href="index.html" class="active">Main</a></li>
                 <li><a href="about_me.html">About Me</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
-                <li style="display: none;"><a href="#">UNDEFINED</a></li>
                 <li><a href="contact_me.html">Contact Me</a></li>
-                <li><a href="links.html">Links</a></li>
             </ul>
         </nav>
-        <header>
+        <header class="webpageInfo hidden">
             <h1><br><b>Welcome to Michael's Website!</b></h1>
-            <h2 style="align-self: center;"><b>Version 3.0</b></h2>
+            <h2 style="align-self: center;"><b>Version 4.0</b></h2>
+            <!-- Personal inspiration quote. -->
+            <blockquote><p><q><b>Achievement, loyalty, and responsibility are my three meals a day.<br>—Michael Cortez</b></q></p></blockquote>
         </header>
         
         <main>
-            <!-- Personal inspiration quote. -->
-            <blockquote><p><q><b>Achievement, loyalty, and responsibility are my three meals a day.<br>—Michael Cortez</b></q></p></blockquote>
             <!-- The Hero section of my index webpage. -->
             <section class="upperGrid">
-                <div class="imageWrapper q1">
-                    <img src="./images/selfies/collegeUndergradPic2026.jpg" class="gradSelfie">
+                <div class="imageWrapper q1 hidden">
+                    <img src="./images/selfies/newProfessionalPicture.png" alt="A modern professional selfie of Michael Cortez." class="newProSelfie">
                 </div>
-                <div class="paragraph-box q2">
+                <div class="paragraph-box q2 hidden">
                     <h3><b>Who I Am</b></h3>
                     <p>
                         <br>I'm Michael, Michael Cortez. It's nice to meet you! I'm a Computer 
-                        Programming undergraduate, Class of 2026. I have a passion for writing 
+                        Programming graduate, Class of 2026. I have a passion for writing 
                         programs, volunteering to help others, and learning new things. 
-                        <br><br>Learn more about me here: <button onclick="window.location.href='about_me.html';">About Me</button>
+                        <br><br>Learn more about me here: <a href="about_me.html" class="button">About Me</a>
                     </p>
                 </div>
             </section>
 
             <section class="indexGrid">
-                <div class="imageWrapper q1">
-                    <img src="./images/portfolioBook/writing-pencil-creative-green-artist-paper-font-portfolio-wired-sketchbook-964001.jpg" class="portfolioPic">
+                <div class="imageWrapper q1 hidden">
+                    <img src="./images/portfolioBook/writing-pencil-creative-green-artist-paper-font-portfolio-wired-sketchbook-964001.jpg" alt="Picture of a white and green notebook with a pencil." class="portfolioPic">
                 </div>
-                <div class="paragraph-box q2">
+                <div class="paragraph-box q2 hidden">
                     <h3><b>Check Out My Portfolio</b></h3>
                     <p>
                         <br>From CLI-based programs written out of curosity to a GUI-based 
                         chatroom application developed during my college's Associate program, 
                         my projects reflect my growth as a programmer. I enjoy writing clean 
                         code and learning new technologies.
-                        <br><br>Take a look at my portfolio here: <button onclick="window.location.href='portfolio.html';">View Portfolio</button>
+                        <br><br>Take a look at my portfolio here: <a href="portfolio.html" class="button">View Portfolio</a>
                     </p>
                 </div>
 
-                <div class="imageWrapper q3">
-                    <img src="./images/contactMePhoto/contact-us-2993109_1280.jpg" class="contactMePic">
+                <div class="imageWrapper q3 hidden">
+                    <img src="./images/contactMePhoto/contact-us-2993109_1280.jpg" alt="A human finger pointing at four blue blocks representing forms of communication." class="contactMePic">
                 </div>
-                <div class="paragraph-box q4">
+                <div class="paragraph-box q4 hidden">
                     <h3><b>Connect With Me</b></h3>
                     <p>
                         <br>I'm open to discussing new opportunities and expanding my network. Feel 
-                        free to send in a form submission or you can text or even call me and leave 
-                        a voicemail message. I will reach back out to you as soon as I can. I look 
-                        forward to hearing from you!
-                        <br><br>Contact me here: <button onclick="window.location.href='contact_me.html';">Contact Me</button>
-                    </p>
-                </div>
-
-                <div class="imageWrapper q5">
-                    <img src="./images/professionalSpaces/Benefits-of-Epoxy-Floor-Covering.jpg" class="professionalSpaces">
-                </div>
-                <div class="paragraph-box q6">
-                    <h3><b>Explore My Professional Presence</b></h3>
-                    <p>
-                        <br>I'm active on a few social media platforms. I have a LinkedIn profile 
-                        and a GitHub profile that you are more than welcome to explore. I am able 
-                        to receive messages on LinkedIn and do accept reasonable network expansion 
-                        requests. I push updates to my GitHub repositories every so often, so feel 
-                        free to check them out and leave some contructive feedback if you have any.
-                        <br><br>Look at my professional spaces here: <button onclick="window.location.href='links.html';">View My Links</button>
+                        free to send in a form submission or you can text me or even call me and leave 
+                        a voicemail message. I'm always open to connecting on LinkedIn, too. 
+                        <br>I will reach back out to you as soon as I can. I look forward to hearing from you!
+                        <br><br>Contact me here: <a href="contact_me.html" class="button">Contact Me</a>
+                        <br>You can also check out my resume here: <a href="assets/resume/michaelCortez_resume.pdf" target="_blank" rel="noopener noreferrer" class="button">View Resume</a>
                     </p>
                 </div>
             </section>
+
+            <div class="creditsParagraph hidden">
+                <h2>Credits:</h2>
+                <p>
+                    <br>The dark mode moon icon was created by <a href="https://github.com/CyCraft" target="_blank" rel="noopener noreferrer">CyCraft</a> 
+                    on <a href="https://github.com/CyCraft/pepicons" target="_blank" rel="noopener noreferrer">GitHub</a> and is licensed under the CC 
+                    Attribution 4.0 International license. The sun icon for the dark mode toggle button was created by <a href="https://github.com/Iconscout" target="_blank" rel="noopener noreferrer">Iconscout</a> 
+                    on <a href="https://github.com/Iconscout/unicons" target="_blank" rel="noopener noreferrer">GitHub</a> and is licensed under the 
+                    Apache 2.0 license.
+                    <br>The website logo, favicon, and professional selfies were created and taken by the author of this website, Michael Cortez. 
+                    All rights are reserved to the author. All other images on this website were taken from various free stock image websites and are 
+                    licensed with Creative Commons 4.0 licenses.
+                    <br>All rights are reserved to the respective owners.
+                </p>
+            </div>
         </main>
 
-        <footer>
-            <span id="footer"></span>
+        <footer id="footer">
+            <noscript>
+                <h3 style="text-align: left;">JavaScript is currently disabled or is not functioning properly. Some content and features may be limited or not display correctly.</h3>
+                <ul style="list-style: none;">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about_me.html">About Me</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact_me.html">Contact Me</a></li>
+                </ul>
+                <span style="display: inline-block; width: 100%; text-align: left;">&copy; 2026 Michael Cortez. All rights reserved.</span>
+            </noscript>
         </footer>
 
-        <!-- --JavaScript scripts for this webpage.-- -->
-        <!-- Updates the footer's last updated date. -->
-        <script type="text/javascript" src="./scripts/footer/footerContent.js" defer></script>
+        <!-- JavaScript scripts for this webpage. -->
+        <!-- Loads the footer's content. -->
+        <script defer type="text/javascript" src="./scripts/footer/footerContent.js"></script>
         <!-- Enables the hamburger menu functionality.-->
-        <script type="text/javascript" src="./scripts/hamburger/hamburger.js" defer></script>
+        <script defer type="text/javascript" src="./scripts/hamburger/hamburger.js"></script>
         <!-- Toggles the banner visibility. -->
-        <script type="text/javascript" src="./scripts/banner/banner.js" defer></script>
+        <script defer type="text/javascript" src="./scripts/banner/banner.js"></script>
+        <!-- Handles phone calls and texts. -->
+        <script defer type="text/javascript" src="./scripts/phone/phoneCall.js"></script>
+        <script defer type="text/javascript" src="./scripts/phone/phoneText.js"></script>
+        <!-- Injects dark mode functionality, a very much long awaited feature. -->
+        <script defer type="text/javascript" src="./scripts/darkMode/darkMode.js"></script>
+        <!-- Injects the new animations that reveal upward. -->
+        <script defer type="text/javascript" src="./scripts/animations/revealUp.js"></script>
     </body>
 </html>

@@ -1,3 +1,7 @@
+/* Author: Michael Cortez
+   Filename: hamburger.js
+   Last updated: Jul. 29, 2026 */
+
 // This is my second JavaScript file. At this stage, I am still a noob.
 // This file is to apply interactivity to the hamburger menu for mobile users.
 
